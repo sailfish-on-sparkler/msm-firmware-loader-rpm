@@ -18,6 +18,7 @@ install -Dm755 msm-firmware-loader.sh -t %{buildroot}%{_sbindir}
 install -Dm644 msm-firmware-loader.service -t %{buildroot}%{_unitdir}
 mkdir -p %{buildroot}%{_unitdir}/sysinit.target.wants
 ln -s ../msm-firmware-loader.service %{buildroot}%{_unitdir}/sysinit.target.wants/msm-firmware-loader.service
+mkdir -p %{buildroot}/lib/firmware/msm-firmware-loader
 
 %files
 %defattr(-,root,root,-)
@@ -25,3 +26,4 @@ ln -s ../msm-firmware-loader.service %{buildroot}%{_unitdir}/sysinit.target.want
 %{_sbindir}/msm-firmware-loader.sh
 %{_unitdir}/msm-firmware-loader.service
 %{_unitdir}/sysinit.target.wants/msm-firmware-loader.service
+/lib/firmware/msm-firmware-loader
